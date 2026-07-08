@@ -21,7 +21,7 @@ export default function GallerySection() {
   ];
 
   return (
-    <section id="gallery" className="relative py-24 bg-[#0F2922] text-white overflow-hidden" aria-label="Photo Gallery">
+    <section id="gallery" className="relative py-24 bg-[#0B0F19] text-white overflow-hidden" aria-label="Photo Gallery">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header block */}
         <div className="text-center max-w-2xl mx-auto space-y-4 mb-16">
@@ -33,7 +33,7 @@ export default function GallerySection() {
           </h2>
           <div className="h-1 w-20 bg-[#D4AF37] mx-auto rounded-sm" />
           <p className="text-zinc-300 text-sm">
-            Walk virtually through our emerald gardens, fine dining pavilions, romantic wedding alters, and high-end suites.
+            Walk virtually through our lush gardens, fine dining pavilions, romantic wedding alters, and high-end suites.
           </p>
         </div>
 
@@ -45,7 +45,7 @@ export default function GallerySection() {
               onClick={() => setFilter(cat.value as any)}
               className={`px-4.5 py-2 rounded-sm text-xs font-semibold uppercase tracking-widest transition-all duration-300 cursor-pointer ${
                 filter === cat.value
-                  ? 'bg-[#D4AF37] text-[#0F2922] font-bold shadow-md'
+                  ? 'bg-[#D4AF37] text-[#0B0F19] font-bold shadow-md'
                   : 'bg-white/5 border border-white/10 hover:bg-white/10 text-zinc-300'
               }`}
               id={`gallery-tab-${cat.value}`}
@@ -81,7 +81,7 @@ export default function GallerySection() {
 
                 {/* Eye Icon on Hover */}
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="w-10 h-10 rounded-sm bg-[#D4AF37] text-[#0F2922] flex items-center justify-center shadow-lg">
+                  <div className="w-10 h-10 rounded-sm bg-[#D4AF37] text-[#0B0F19] flex items-center justify-center shadow-lg">
                     <Eye className="w-5 h-5" />
                   </div>
                 </div>
@@ -128,7 +128,7 @@ export default function GallerySection() {
               />
               <button
                 onClick={() => setLightboxImage(null)}
-                className="absolute top-4 right-4 p-2 rounded-sm bg-black/50 hover:bg-[#D4AF37] hover:text-[#0F2922] text-white transition-colors cursor-pointer"
+                className="absolute top-4 right-4 p-2 rounded-sm bg-black/50 hover:bg-[#D4AF37] hover:text-[#0B0F19] text-white transition-colors cursor-pointer"
                 id="gallery-lightbox-close"
               >
                 Close ×

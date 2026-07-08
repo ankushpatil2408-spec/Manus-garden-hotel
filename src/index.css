@@ -9,35 +9,35 @@
 
 /* Custom glow and luxury glassmorphism styles */
 .glass-panel {
-  background: rgba(6, 78, 59, 0.25); /* Emerald 900 base */
+  background: rgba(11, 15, 25, 0.6); /* Premium dark navy base */
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(253, 224, 71, 0.15); /* Yellow/Gold light border */
+  border: 1px solid rgba(212, 175, 55, 0.15); /* Gold light border */
 }
 
 .glass-panel-light {
   background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(197, 160, 89, 0.2); /* Gold border */
+  border: 1px solid rgba(212, 175, 55, 0.2); /* Gold border */
 }
 
 .gold-gradient-text {
-  background: linear-gradient(135deg, #fef08a 0%, #ca8a04 50%, #eab308 100%);
+  background: linear-gradient(135deg, #F9E7B9 0%, #D4AF37 50%, #AA820A 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .gold-gradient-bg {
-  background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%);
+  background: linear-gradient(135deg, #D4AF37 0%, #B5942B 100%);
 }
 
 .gold-border {
-  border-color: rgba(234, 179, 8, 0.4);
+  border-color: rgba(212, 175, 55, 0.4);
 }
 
 .gold-glow {
-  box-shadow: 0 0 20px rgba(234, 179, 8, 0.15);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
 }
 
 /* Custom scrollbar */
@@ -46,16 +46,16 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #022c22; /* Emerald 950 */
+  background: #0B0F19; /* Deep luxury navy */
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #115e59; /* Teal 800 */
+  background: #1C2538; /* Medium navy */
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #ca8a04; /* Gold 600 */
+  background: #D4AF37; /* Gold */
 }
 
 /* Scroll snap utilities */

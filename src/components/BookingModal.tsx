@@ -107,7 +107,7 @@ export default function BookingModal({ isOpen, onClose, selectedRoomId }: Bookin
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="absolute inset-0 bg-[#0F2922]/80 backdrop-blur-md"
+            className="absolute inset-0 bg-[#0B0F19]/80 backdrop-blur-md"
             id="modal-backdrop"
           />
 
@@ -123,14 +123,14 @@ export default function BookingModal({ isOpen, onClose, selectedRoomId }: Bookin
             {/* Close Button */}
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 z-10 p-2 rounded-sm bg-black/40 hover:bg-[#D4AF37] hover:text-[#0F2922] text-white transition-colors cursor-pointer"
+              className="absolute top-4 right-4 z-10 p-2 rounded-sm bg-black/40 hover:bg-[#D4AF37] hover:text-[#0B0F19] text-white transition-colors cursor-pointer"
               id="close-booking-modal"
             >
               <X className="w-5 h-5" />
             </button>
 
             {/* Left Column: Room Preview (Hidden on mobile or smaller screens) */}
-            <div className="hidden md:flex md:w-5/12 bg-[#0F2922]/40 p-6 flex-col justify-between border-r border-zinc-800/80">
+            <div className="hidden md:flex md:w-5/12 bg-[#0B0F19]/40 p-6 flex-col justify-between border-r border-zinc-800/80">
               <div className="space-y-4">
                 <span className="inline-block px-3 py-1 text-xs font-mono rounded-sm bg-[#D4AF37]/15 border border-[#D4AF37]/30 text-[#D4AF37]">
                   Resort Suite Showcase
@@ -142,7 +142,7 @@ export default function BookingModal({ isOpen, onClose, selectedRoomId }: Bookin
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0F2922] via-transparent to-transparent opacity-80" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F19] via-transparent to-transparent opacity-80" />
                   <div className="absolute bottom-3 left-3 right-3">
                     <p className="font-serif text-sm text-[#D4AF37]/90">Price per Night</p>
                     <p className="font-mono text-xl font-bold text-[#D4AF37]">₹{selectedRoom.price.toLocaleString('en-IN')}</p>
@@ -176,7 +176,7 @@ export default function BookingModal({ isOpen, onClose, selectedRoomId }: Bookin
 
               {/* Guarantees */}
               <div className="pt-4 border-t border-zinc-800/80 space-y-2">
-                <div className="flex items-center gap-2 text-xs text-emerald-500 font-semibold">
+                <div className="flex items-center gap-2 text-xs text-[#D4AF37] font-semibold">
                   <Shield className="w-4 h-4 flex-shrink-0" />
                   <span>Best Rate Guaranteed</span>
                 </div>
@@ -254,7 +254,7 @@ export default function BookingModal({ isOpen, onClose, selectedRoomId }: Bookin
                       <button
                         type="button"
                         onClick={() => setGuests(Math.max(1, guests - 1))}
-                        className="w-7 h-7 flex items-center justify-center rounded-sm bg-zinc-700 hover:bg-[#D4AF37] hover:text-[#0F2922] font-bold transition-colors cursor-pointer"
+                        className="w-7 h-7 flex items-center justify-center rounded-sm bg-zinc-700 hover:bg-[#D4AF37] hover:text-[#0B0F19] font-bold transition-colors cursor-pointer"
                         id="booking-guests-dec"
                       >
                         -
@@ -263,7 +263,7 @@ export default function BookingModal({ isOpen, onClose, selectedRoomId }: Bookin
                       <button
                         type="button"
                         onClick={() => setGuests(Math.min(6, guests + 1))}
-                        className="w-7 h-7 flex items-center justify-center rounded-sm bg-zinc-700 hover:bg-[#D4AF37] hover:text-[#0F2922] font-bold transition-colors cursor-pointer"
+                        className="w-7 h-7 flex items-center justify-center rounded-sm bg-zinc-700 hover:bg-[#D4AF37] hover:text-[#0B0F19] font-bold transition-colors cursor-pointer"
                         id="booking-guests-inc"
                       >
                         +
@@ -327,7 +327,7 @@ export default function BookingModal({ isOpen, onClose, selectedRoomId }: Bookin
                       <button
                         type="button"
                         onClick={handleApplyPromo}
-                        className="px-4 py-1.5 bg-[#D4AF37] hover:bg-[#B8982E] text-[#0F2922] font-bold rounded-sm text-xs transition-colors cursor-pointer"
+                        className="px-4 py-1.5 bg-[#D4AF37] hover:bg-[#B8982E] text-[#0B0F19] font-bold rounded-sm text-xs transition-colors cursor-pointer"
                         id="booking-promo-apply-btn"
                       >
                         Apply
@@ -366,12 +366,12 @@ export default function BookingModal({ isOpen, onClose, selectedRoomId }: Bookin
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-3 bg-[#D4AF37] hover:bg-[#B8982E] text-[#0F2922] font-bold rounded-sm text-sm transition-all duration-300 transform active:scale-[0.98] cursor-pointer shadow-lg hover:shadow-[#D4AF37]/20 flex justify-center items-center gap-2"
+                    className="w-full py-3 bg-[#D4AF37] hover:bg-[#B8982E] text-[#0B0F19] font-bold rounded-sm text-sm transition-all duration-300 transform active:scale-[0.98] cursor-pointer shadow-lg hover:shadow-[#D4AF37]/20 flex justify-center items-center gap-2"
                     id="booking-submit-button"
                   >
                     {isSubmitting ? (
                       <>
-                        <svg className="animate-spin h-5 w-5 text-[#0F2922]" fill="none" viewBox="0 0 24 24">
+                        <svg className="animate-spin h-5 w-5 text-[#0B0F19]" fill="none" viewBox="0 0 24 24">
                           <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                           <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
                         </svg>
@@ -385,7 +385,7 @@ export default function BookingModal({ isOpen, onClose, selectedRoomId }: Bookin
               ) : (
                 /* Success Screen */
                 <div className="flex flex-col items-center justify-center text-center py-8 space-y-6">
-                  <div className="w-16 h-16 bg-emerald-500/10 border border-emerald-400/30 rounded-sm flex items-center justify-center text-emerald-400">
+                  <div className="w-16 h-16 bg-[#D4AF37]/10 border border-[#D4AF37]/30 rounded-sm flex items-center justify-center text-[#D4AF37]">
                     <Check className="w-8 h-8" />
                   </div>
                   <div className="space-y-2">
@@ -406,7 +406,7 @@ export default function BookingModal({ isOpen, onClose, selectedRoomId }: Bookin
                     {/* Instantly book via WhatsApp button */}
                     <button
                       onClick={handleWhatsAppShare}
-                      className="w-full py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-sm text-sm transition-colors cursor-pointer flex justify-center items-center gap-2 shadow-lg shadow-emerald-950/40"
+                      className="w-full py-3 bg-[#D4AF37] hover:bg-[#B8982E] text-[#0B0F19] font-bold rounded-sm text-sm transition-colors cursor-pointer flex justify-center items-center gap-2 shadow-lg"
                       id="booking-whatsapp-share-btn"
                     >
                       <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">

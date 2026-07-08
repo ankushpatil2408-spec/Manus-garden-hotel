@@ -11,7 +11,7 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="relative py-24 bg-[#0F2922] text-white overflow-hidden" aria-label="Frequently Asked Questions">
+    <section className="relative py-24 bg-[#0B0F19] text-white overflow-hidden" aria-label="Frequently Asked Questions">
       {/* Decorative background circle */}
       <div className="absolute bottom-0 right-0 w-80 h-80 bg-[#D4AF37]/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -78,7 +78,7 @@ export default function FAQSection() {
           <p className="text-zinc-400 text-xs">Reach out directly to our helpdesk and get custom quotes in under 2 hours.</p>
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 px-5 py-2 bg-[#D4AF37] hover:bg-[#B8982E] text-[#0F2922] font-bold uppercase tracking-widest text-[10px] rounded-sm transition-colors cursor-pointer"
+            className="inline-flex items-center gap-2 px-5 py-2 bg-[#D4AF37] hover:bg-[#B8982E] text-[#0B0F19] font-bold uppercase tracking-widest text-[10px] rounded-sm transition-colors cursor-pointer"
             id="faq-chat-link"
           >
             <MessageSquare className="w-3.5 h-3.5" />

@@ -19,9 +19,9 @@ export default function Restaurant() {
   ];
 
   return (
-    <section id="restaurant" className="relative py-24 bg-[#FCFAF7] text-[#1A2E26] overflow-hidden" aria-label="Garden Restaurant">
+    <section id="restaurant" className="relative py-24 bg-[#FCFAF7] text-[#1E222F] overflow-hidden" aria-label="Garden Restaurant">
       {/* Background aesthetics */}
-      <div className="absolute top-1/3 left-0 w-80 h-80 bg-[#0F2922]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/3 left-0 w-80 h-80 bg-[#0B0F19]/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Banner Grid */}
@@ -31,7 +31,7 @@ export default function Restaurant() {
               <span className="text-xs font-mono uppercase tracking-widest text-[#D4AF37] font-bold block">
                 Epicurean Oasis
               </span>
-              <h2 className="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-[#0F2922] leading-tight">
+              <h2 className="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-[#0B0F19] leading-tight">
                 Al Fresco Garden Dining
               </h2>
               <div className="h-1 w-20 bg-[#D4AF37] rounded-sm" />
@@ -43,29 +43,29 @@ export default function Restaurant() {
 
             <div className="space-y-4">
               <div className="flex items-start gap-3">
-                <div className="p-1.5 rounded-sm bg-[#0F2922]/5 text-[#0F2922] border border-[#0F2922]/10">
+                <div className="p-1.5 rounded-sm bg-[#0B0F19]/5 text-[#0B0F19] border border-[#0B0F19]/10">
                   <Leaf className="w-4 h-4" />
                 </div>
                 <div>
-                  <h4 className="font-serif font-bold text-[#0F2922] text-sm sm:text-base">Organic, Garden-to-Table</h4>
+                  <h4 className="font-serif font-bold text-[#0B0F19] text-sm sm:text-base">Organic, Garden-to-Table</h4>
                   <p className="text-xs text-zinc-500">Vegetables, herbs, and citrus garnishes harvested directly from our botanical beds.</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <div className="p-1.5 rounded-sm bg-[#0F2922]/5 text-[#0F2922] border border-[#0F2922]/10">
+                <div className="p-1.5 rounded-sm bg-[#0B0F19]/5 text-[#0B0F19] border border-[#0B0F19]/10">
                   <Flame className="w-4 h-4" />
                 </div>
                 <div>
-                  <h4 className="font-serif font-bold text-[#0F2922] text-sm sm:text-base">Authentic Clay Tandoor</h4>
+                  <h4 className="font-serif font-bold text-[#0B0F19] text-sm sm:text-base">Authentic Clay Tandoor</h4>
                   <p className="text-xs text-zinc-500">Delicately charred naans, seekh kebabs, and paneer tikkas cooked on live red coals.</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <div className="p-1.5 rounded-sm bg-[#0F2922]/5 text-[#0F2922] border border-[#0F2922]/10">
+                <div className="p-1.5 rounded-sm bg-[#0B0F19]/5 text-[#0B0F19] border border-[#0B0F19]/10">
                   <Coffee className="w-4 h-4" />
                 </div>
                 <div>
-                  <h4 className="font-serif font-bold text-[#0F2922] text-sm sm:text-base">Burhanpur Traditions</h4>
+                  <h4 className="font-serif font-bold text-[#0B0F19] text-sm sm:text-base">Burhanpur Traditions</h4>
                   <p className="text-xs text-zinc-500">World-famous warm Mawa Jalebis made fresh in small batches under your eyes.</p>
                 </div>
               </div>
@@ -81,13 +81,13 @@ export default function Restaurant() {
                 className="w-full h-full object-cover transform scale-100 group-hover:scale-102 transition-transform duration-700"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0F2922]/80 via-transparent to-transparent opacity-80" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F19]/80 via-transparent to-transparent opacity-80" />
               <div className="absolute bottom-6 left-6 right-6 flex justify-between items-end text-white">
                 <div>
                   <span className="text-[10px] uppercase font-mono tracking-wider text-[#D4AF37]">Atmosphere</span>
                   <p className="font-serif text-lg sm:text-xl font-bold">The Palms Dining Pavilion</p>
                 </div>
-                <div className="flex items-center gap-1 bg-[#D4AF37] text-[#0F2922] px-3 py-1 rounded-sm text-xs font-bold font-mono shadow-md">
+                <div className="flex items-center gap-1 bg-[#D4AF37] text-[#0B0F19] px-3 py-1 rounded-sm text-xs font-bold font-mono shadow-md">
                   <Star className="w-3.5 h-3.5 fill-current" />
                   <span>4.9 Star Rating</span>
                 </div>
@@ -102,7 +102,7 @@ export default function Restaurant() {
             <span className="text-xs font-mono uppercase tracking-widest text-[#D4AF37] font-bold">
               Culinary Artistry
             </span>
-            <h3 className="font-serif text-3xl sm:text-4xl font-bold text-[#0F2922]">
+            <h3 className="font-serif text-3xl sm:text-4xl font-bold text-[#0B0F19]">
               The Epicurean Menu Highlights
             </h3>
             <p className="text-zinc-500 text-sm">
@@ -118,8 +118,8 @@ export default function Restaurant() {
                 onClick={() => setActiveCategory(cat.value as any)}
                 className={`px-5 py-2 rounded-sm text-xs font-semibold uppercase tracking-widest transition-all duration-300 cursor-pointer ${
                   activeCategory === cat.value
-                    ? 'bg-[#0F2922] text-[#FCFAF7] font-semibold shadow-md'
-                    : 'bg-white border border-zinc-200 hover:bg-[#FCFAF7] text-[#1A2E26]'
+                    ? 'bg-[#0B0F19] text-[#FCFAF7] font-semibold shadow-md'
+                    : 'bg-white border border-zinc-200 hover:bg-[#FCFAF7] text-[#1E222F]'
                 }`}
                 id={`dish-tab-${cat.value}`}
               >
@@ -151,7 +151,7 @@ export default function Restaurant() {
                     />
                     <div className="absolute top-3 left-3 flex flex-wrap gap-1.5">
                       {dish.tags.map(tag => (
-                        <span key={tag} className="px-2 py-0.5 bg-[#0F2922]/90 backdrop-blur-sm text-white text-[9px] font-semibold uppercase tracking-wider rounded-sm">
+                        <span key={tag} className="px-2 py-0.5 bg-[#0B0F19]/90 backdrop-blur-sm text-white text-[9px] font-semibold uppercase tracking-wider rounded-sm">
                           {tag}
                         </span>
                       ))}
@@ -161,10 +161,10 @@ export default function Restaurant() {
                   <div className="p-5 flex-grow flex flex-col justify-between space-y-4">
                     <div className="space-y-2">
                       <div className="flex justify-between items-start">
-                        <h4 className="font-serif text-lg font-bold text-[#0F2922] group-hover:text-[#D4AF37] transition-colors leading-tight">
+                        <h4 className="font-serif text-lg font-bold text-[#0B0F19] group-hover:text-[#D4AF37] transition-colors leading-tight">
                           {dish.name}
                         </h4>
-                        <span className="font-mono text-sm font-bold text-[#0F2922] flex-shrink-0 ml-3">
+                        <span className="font-mono text-sm font-bold text-[#0B0F19] flex-shrink-0 ml-3">
                           ₹{dish.price}
                         </span>
                       </div>

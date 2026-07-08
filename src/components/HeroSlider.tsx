@@ -145,7 +145,7 @@ export default function HeroSlider({ onOpenBooking }: HeroSliderProps) {
       </div>
 
       {/* Quick Availability Form (Floating Glassmorphism Bar) */}
-      <div className="absolute bottom-0 left-0 right-0 z-20 transform translate-y-1/3 px-4 max-w-6xl mx-auto hidden md:block">
+      <div className="absolute bottom-6 left-0 right-0 z-20 px-4 max-w-6xl mx-auto hidden md:block">
         <form
           onSubmit={handleQuickSearch}
           className="glass-panel p-5 rounded-2xl border border-[#D4AF37]/20 shadow-2xl flex flex-row items-end gap-4 text-white"
@@ -161,7 +161,7 @@ export default function HeroSlider({ onOpenBooking }: HeroSliderProps) {
               value={checkIn}
               min={new Date().toISOString().split('T')[0]}
               onChange={(e) => setCheckIn(e.target.value)}
-              className="w-full bg-[#0F2922]/80 border border-[#1A2E26] rounded-sm py-2 px-3 text-xs focus:outline-none focus:border-[#D4AF37] text-zinc-100 font-sans"
+              className="w-full bg-[#0B0F19]/80 border border-[#1C2538] rounded-sm py-2 px-3 text-xs focus:outline-none focus:border-[#D4AF37] text-zinc-100 font-sans"
               id="quick-check-in"
             />
           </div>
@@ -176,7 +176,7 @@ export default function HeroSlider({ onOpenBooking }: HeroSliderProps) {
               value={checkOut}
               min={checkIn || new Date().toISOString().split('T')[0]}
               onChange={(e) => setCheckOut(e.target.value)}
-              className="w-full bg-[#0F2922]/80 border border-[#1A2E26] rounded-sm py-2 px-3 text-xs focus:outline-none focus:border-[#D4AF37] text-zinc-100 font-sans"
+              className="w-full bg-[#0B0F19]/80 border border-[#1C2538] rounded-sm py-2 px-3 text-xs focus:outline-none focus:border-[#D4AF37] text-zinc-100 font-sans"
               id="quick-check-out"
             />
           </div>
@@ -189,11 +189,11 @@ export default function HeroSlider({ onOpenBooking }: HeroSliderProps) {
             <select
               value={selectedRoomId}
               onChange={(e) => setSelectedRoomId(e.target.value)}
-              className="w-full bg-[#0F2922]/80 border border-[#1A2E26] rounded-sm py-2 px-3 text-xs focus:outline-none focus:border-[#D4AF37] text-zinc-100 font-sans"
+              className="w-full bg-[#0B0F19]/80 border border-[#1C2538] rounded-sm py-2 px-3 text-xs focus:outline-none focus:border-[#D4AF37] text-zinc-100 font-sans"
               id="quick-room-type"
             >
               {ROOMS_DATA.map((room) => (
-                <option key={room.id} value={room.id} className="bg-[#0F2922] text-white">
+                <option key={room.id} value={room.id} className="bg-[#0B0F19] text-white">
                   {room.name}
                 </option>
               ))}
@@ -203,7 +203,7 @@ export default function HeroSlider({ onOpenBooking }: HeroSliderProps) {
           {/* Check Availability Button */}
           <button
             type="submit"
-            className="py-2.5 px-6 bg-[#D4AF37] text-[#0F2922] hover:bg-[#B8982E] font-bold uppercase tracking-widest text-xs rounded-sm flex items-center gap-2 shadow-lg transition-colors cursor-pointer"
+            className="py-2.5 px-6 bg-[#D4AF37] text-[#0B0F19] hover:bg-[#B8982E] font-bold uppercase tracking-widest text-xs rounded-sm flex items-center gap-2 shadow-lg transition-colors cursor-pointer"
             id="quick-search-btn"
           >
             <Search className="w-4 h-4" />

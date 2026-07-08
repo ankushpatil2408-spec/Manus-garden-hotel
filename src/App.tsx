@@ -52,7 +52,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#0F2922] text-white font-sans selection:bg-[#D4AF37] selection:text-[#0F2922] scroll-smooth">
+    <div className="min-h-screen bg-[#0B0F19] text-white font-sans selection:bg-[#D4AF37] selection:text-[#0B0F19] scroll-smooth">
       {/* Header Sticky Navigation */}
       <Navbar onOpenBooking={handleOpenBooking} activeSection={activeSection} />
 

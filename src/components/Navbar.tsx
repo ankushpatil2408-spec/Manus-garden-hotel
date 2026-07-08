@@ -49,8 +49,8 @@ export default function Navbar({ onOpenBooking, activeSection }: NavbarProps) {
     <nav
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#0F2922] py-3 border-b border-[#D4AF37]/30 shadow-lg'
-          : 'bg-[#0F2922]/90 backdrop-blur-md py-4 border-b border-[#D4AF37]/15'
+          ? 'bg-[#0B0F19] py-3 border-b border-[#D4AF37]/30 shadow-lg'
+          : 'bg-[#0B0F19]/90 backdrop-blur-md py-4 border-b border-[#D4AF37]/15'
       }`}
       id="main-navbar"
     >
@@ -110,7 +110,7 @@ export default function Navbar({ onOpenBooking, activeSection }: NavbarProps) {
             </a>
             <button
               onClick={() => onOpenBooking()}
-              className="px-6 py-2.5 rounded-sm text-xs font-bold uppercase tracking-widest bg-[#D4AF37] text-[#0F2922] hover:bg-[#B8982E] transition-colors flex items-center gap-1.5 cursor-pointer shadow-md"
+              className="px-6 py-2.5 rounded-sm text-xs font-bold uppercase tracking-widest bg-[#D4AF37] text-[#0B0F19] hover:bg-[#B8982E] transition-colors flex items-center gap-1.5 cursor-pointer shadow-md"
               id="navbar-book-now-btn"
             >
               <Sparkles className="w-3.5 h-3.5" />
@@ -150,7 +150,7 @@ export default function Navbar({ onOpenBooking, activeSection }: NavbarProps) {
           />
 
           {/* Drawer Menu */}
-          <div className="absolute top-0 left-0 right-0 bg-[#0F2922] border-b border-[#D4AF37]/30 py-6 px-4 space-y-4 shadow-2xl flex flex-col items-center">
+          <div className="absolute top-0 left-0 right-0 bg-[#0B0F19] border-b border-[#D4AF37]/30 py-6 px-4 space-y-4 shadow-2xl flex flex-col items-center">
             {navLinks.map((link) => {
               const isActive = activeSection === link.href.replace('#', '');
               return (
@@ -172,7 +172,7 @@ export default function Navbar({ onOpenBooking, activeSection }: NavbarProps) {
                 setIsOpen(false);
                 onOpenBooking();
               }}
-              className="w-full max-w-sm mt-4 py-3 bg-[#D4AF37] text-[#0F2922] hover:bg-[#B8982E] font-bold uppercase tracking-widest text-xs rounded-sm transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-lg"
+              className="w-full max-w-sm mt-4 py-3 bg-[#D4AF37] text-[#0B0F19] hover:bg-[#B8982E] font-bold uppercase tracking-widest text-xs rounded-sm transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-lg"
               id="nav-mobile-book-now-btn"
             >
               <Sparkles className="w-4 h-4" />

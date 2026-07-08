@@ -4,14 +4,14 @@ import { REVIEWS_DATA } from '../data';
 
 export default function Testimonials() {
   return (
-    <section className="relative py-24 bg-[#FCFAF7] text-[#1A2E26] overflow-hidden" aria-label="Customer Reviews">
+    <section className="relative py-24 bg-[#FCFAF7] text-[#1E222F] overflow-hidden" aria-label="Customer Reviews">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header Block */}
         <div className="text-center max-w-2xl mx-auto space-y-4 mb-16">
-          <span className="inline-flex items-center gap-1.5 px-3.5 py-1 text-xs font-mono uppercase tracking-widest bg-[#0F2922]/5 border border-[#0F2922]/10 text-[#0F2922] rounded-full">
+          <span className="inline-flex items-center gap-1.5 px-3.5 py-1 text-xs font-mono uppercase tracking-widest bg-[#0B0F19]/5 border border-[#0B0F19]/10 text-[#0B0F19] rounded-full">
             <MessageSquare className="w-3.5 h-3.5" /> Guest Diaries
           </span>
-          <h2 className="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-[#0F2922]">
+          <h2 className="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-[#0B0F19]">
             What Our Guests Cherish
           </h2>
           <div className="h-1 w-20 bg-[#D4AF37] mx-auto rounded-sm" />
@@ -58,7 +58,7 @@ export default function Testimonials() {
                   referrerPolicy="no-referrer"
                 />
                 <div>
-                  <h4 className="font-serif text-sm font-bold text-[#0F2922]">{review.name}</h4>
+                  <h4 className="font-serif text-sm font-bold text-[#0B0F19]">{review.name}</h4>
                   <div className="flex items-center gap-1.5 text-[10px] text-zinc-500 mt-0.5">
                     <span className="font-semibold text-[#D4AF37]">{review.location}</span>
                     <span>•</span>

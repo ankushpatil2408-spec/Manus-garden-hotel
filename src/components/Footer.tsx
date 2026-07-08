@@ -27,7 +27,7 @@ export default function Footer({ onOpenBooking }: FooterProps) {
   };
 
   return (
-    <footer className="relative bg-[#0F2922] text-white border-t border-[#D4AF37]/20 pt-16 pb-8" aria-label="Footer and Fast Contact Floats">
+    <footer className="relative bg-[#0B0F19] text-white border-t border-[#D4AF37]/20 pt-16 pb-8" aria-label="Footer and Fast Contact Floats">
       {/* Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
@@ -113,13 +113,13 @@ export default function Footer({ onOpenBooking }: FooterProps) {
       {/* 1. Floating WhatsApp Button (Bottom-Right) */}
       <div className="fixed bottom-6 right-6 z-30 group" id="whatsapp-floater-group">
         {/* Hover Tooltip */}
-        <div className="absolute right-14 top-1/2 -translate-y-1/2 bg-[#0F2922] text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none shadow-lg border border-[#D4AF37]/30 font-mono whitespace-nowrap">
+        <div className="absolute right-14 top-1/2 -translate-y-1/2 bg-[#0B0F19] text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none shadow-lg border border-[#D4AF37]/30 font-mono whitespace-nowrap">
           Chat with Hotel
         </div>
         {/* Trigger */}
         <button
           onClick={handleWhatsApp}
-          className="w-12 h-12 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white flex items-center justify-center shadow-2xl transition-all duration-300 transform hover:scale-110 active:scale-95 cursor-pointer animate-bounce border-2 border-white"
+          className="w-12 h-12 rounded-full bg-[#D4AF37] hover:bg-[#B8982E] text-[#0B0F19] flex items-center justify-center shadow-2xl transition-all duration-300 transform hover:scale-110 active:scale-95 cursor-pointer animate-bounce border-2 border-white"
           aria-label="Contact Hotel on WhatsApp"
           id="whatsapp-floating-trigger"
         >
@@ -133,7 +133,7 @@ export default function Footer({ onOpenBooking }: FooterProps) {
       <div className="fixed bottom-6 left-6 z-30 group sm:hidden" id="call-floater-group">
         <a
           href={`tel:${HOTEL_DETAILS.phone.replace(/\s+/g, '')}`}
-          className="w-12 h-12 rounded-full bg-[#D4AF37] text-[#0F2922] flex items-center justify-center shadow-2xl transition-all duration-300 transform hover:scale-110 active:scale-95 border-2 border-white animate-pulse"
+          className="w-12 h-12 rounded-full bg-[#D4AF37] text-[#0B0F19] flex items-center justify-center shadow-2xl transition-all duration-300 transform hover:scale-110 active:scale-95 border-2 border-white animate-pulse"
           aria-label="Call Hotel Helpdesk"
           id="call-floating-trigger"
         >

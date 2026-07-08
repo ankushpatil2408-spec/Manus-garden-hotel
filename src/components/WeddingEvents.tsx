@@ -33,7 +33,7 @@ export default function WeddingEvents() {
   };
 
   return (
-    <section id="events" className="relative py-24 bg-[#0F2922] text-white overflow-hidden" aria-label="Weddings and Celebrations">
+    <section id="events" className="relative py-24 bg-[#0B0F19] text-white overflow-hidden" aria-label="Weddings and Celebrations">
       {/* Dynamic background lights */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#D4AF37]/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -49,7 +49,7 @@ export default function WeddingEvents() {
             </h2>
             <div className="h-1 w-20 bg-[#D4AF37] rounded-sm" />
             <p className="text-zinc-300 text-sm sm:text-base leading-relaxed font-sans">
-              Host your dream celebrations at the most prestigious wedding destination along Burhanpur Road. Spanning over 1.5 acres of perfectly manicured, emerald-green carpet lawns, <span className="font-semibold text-[#D4AF37]">Manas Garden</span> provides an elegant blend of natural beauty and customized event structures.
+              Host your dream celebrations at the most prestigious wedding destination along Burhanpur Road. Spanning over 1.5 acres of perfectly manicured, royal velvet carpet lawns, <span className="font-semibold text-[#D4AF37]">Manas Garden</span> provides an elegant blend of natural beauty and customized event structures.
             </p>
           </div>
           <div className="lg:col-span-6">
@@ -60,7 +60,7 @@ export default function WeddingEvents() {
                 className="w-full h-full object-cover transform scale-100 group-hover:scale-103 transition-transform duration-700"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0F2922]/80 to-transparent opacity-60" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F19]/80 to-transparent opacity-60" />
             </div>
           </div>
         </div>
@@ -80,7 +80,7 @@ export default function WeddingEvents() {
               <div className="space-y-6">
                 {/* Header */}
                 <div className="space-y-2">
-                  <div className="w-10 h-10 rounded-sm bg-[#D4AF37]/10 border border-[#D4AF37]/30 flex items-center justify-center text-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-[#0F2922] transition-colors">
+                  <div className="w-10 h-10 rounded-sm bg-[#D4AF37]/10 border border-[#D4AF37]/30 flex items-center justify-center text-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-[#0B0F19] transition-colors">
                     <Sparkles className="w-5 h-5" />
                   </div>
                   <h3 className="font-serif text-xl font-bold text-white group-hover:text-[#D4AF37] transition-colors">
@@ -120,7 +120,7 @@ export default function WeddingEvents() {
               {/* Action */}
               <button
                 onClick={() => handleEnquiry(pkg.title)}
-                className="w-full mt-8 py-3 bg-[#D4AF37]/10 hover:bg-[#D4AF37] text-white hover:text-[#0F2922] border border-[#D4AF37]/20 hover:border-transparent rounded-sm text-xs font-bold uppercase tracking-widest transition-colors cursor-pointer flex justify-center items-center gap-2"
+                className="w-full mt-8 py-3 bg-[#D4AF37]/10 hover:bg-[#D4AF37] text-white hover:text-[#0B0F19] border border-[#D4AF37]/20 hover:border-transparent rounded-sm text-xs font-bold uppercase tracking-widest transition-colors cursor-pointer flex justify-center items-center gap-2"
                 id={`event-pkg-btn-${index}`}
               >
                 <Music className="w-3.5 h-3.5" />

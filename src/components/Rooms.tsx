@@ -22,7 +22,7 @@ export default function Rooms({ onOpenBooking }: RoomsProps) {
   ];
 
   return (
-    <section id="rooms" className="relative py-24 bg-[#0F2922] text-white overflow-hidden" aria-label="Our Accommodations">
+    <section id="rooms" className="relative py-24 bg-[#0B0F19] text-white overflow-hidden" aria-label="Our Accommodations">
       {/* Decorative background gradients */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#D4AF37]/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#D4AF37]/5 rounded-full blur-3xl pointer-events-none" />
@@ -50,7 +50,7 @@ export default function Rooms({ onOpenBooking }: RoomsProps) {
               onClick={() => setActiveTab(tab.value as any)}
               className={`px-6 py-2.5 rounded-sm text-xs font-semibold uppercase tracking-widest transition-all duration-300 cursor-pointer ${
                 activeTab === tab.value
-                  ? 'bg-[#D4AF37] text-[#0F2922] font-bold shadow-md'
+                  ? 'bg-[#D4AF37] text-[#0B0F19] font-bold shadow-md'
                   : 'bg-white/5 border border-white/10 hover:bg-white/10 text-zinc-300'
               }`}
               id={`room-tab-${tab.value}`}
@@ -157,7 +157,7 @@ export default function Rooms({ onOpenBooking }: RoomsProps) {
                   <div className="pt-4 flex flex-col sm:flex-row gap-3">
                     <button
                       onClick={() => onOpenBooking(room.id)}
-                      className="px-8 py-3.5 rounded-sm text-xs font-bold uppercase tracking-widest bg-[#D4AF37] text-[#0F2922] hover:bg-[#B8982E] transition-colors text-center cursor-pointer shadow-md"
+                      className="px-8 py-3.5 rounded-sm text-xs font-bold uppercase tracking-widest bg-[#D4AF37] text-[#0B0F19] hover:bg-[#B8982E] transition-colors text-center cursor-pointer shadow-md"
                       id={`room-book-btn-${room.id}`}
                     >
                       Instant Booking
