@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Custom glow and luxury glassmorphism styles */
+.glass-panel {
+  background: rgba(6, 78, 59, 0.25); /* Emerald 900 base */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(253, 224, 71, 0.15); /* Yellow/Gold light border */
+}
+
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(197, 160, 89, 0.2); /* Gold border */
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #fef08a 0%, #ca8a04 50%, #eab308 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%);
+}
+
+.gold-border {
+  border-color: rgba(234, 179, 8, 0.4);
+}
+
+.gold-glow {
+  box-shadow: 0 0 20px rgba(234, 179, 8, 0.15);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #022c22; /* Emerald 950 */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #115e59; /* Teal 800 */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ca8a04; /* Gold 600 */
+}
+
+/* Scroll snap utilities */
+.scroll-smooth {
+  scroll-behavior: smooth;
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Manas Garden Hotel",
+  "description": "Experience luxury, elegance, and nature at Manas Garden Hotel in Raver, Maharashtra. Offering premium rooms, a wedding lawn, a multi-cuisine restaurant, and lush green gardens.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

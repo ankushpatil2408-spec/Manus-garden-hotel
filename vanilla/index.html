@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manas Garden Hotel | Luxury Nature Resort, Raver</title>
+  <meta name="description" content="Experience luxury, elegance, and nature at Manas Garden Hotel in Raver, Maharashtra. Offering premium rooms, a wedding lawn, a multi-cuisine restaurant, and lush green gardens.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CDN (with customizable config for emerald/amber theme) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#022c22] text-white font-sans selection:bg-amber-500 selection:text-emerald-950">
+
+  <!-- ==================== STICKY NAVBAR ==================== -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-40 transition-all duration-300 bg-gradient-to-b from-black/80 to-transparent py-5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between">
+        <!-- Logo -->
+        <a href="#home" class="flex items-center gap-2 group">
+          <div class="w-10 h-10 rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center justify-center">
+            <i data-lucide="leaf" class="w-5 h-5 text-amber-400"></i>
+          </div>
+          <div>
+            <span class="block font-serif text-lg font-bold tracking-wider text-white group-hover:text-amber-200 transition-colors uppercase leading-none">Manas Garden</span>
+            <span class="text-[9px] uppercase tracking-widest text-amber-400/85 font-mono leading-none">L u x u r y &nbsp; H o t e l</span>
+          </div>
+        </a>
+
+        <!-- Desktop Links -->
+        <div class="hidden lg:flex items-center gap-6">
+          <a href="#home" class="nav-link text-sm font-medium text-amber-400 font-semibold relative py-1">Home</a>
+          <a href="#about" class="nav-link text-sm font-medium text-zinc-300 hover:text-white transition-colors relative py-1">About</a>
+          <a href="#rooms" class="nav-link text-sm font-medium text-zinc-300 hover:text-white transition-colors relative py-1">Rooms</a>
+          <a href="#restaurant" class="nav-link text-sm font-medium text-zinc-300 hover:text-white transition-colors relative py-1">Restaurant</a>
+          <a href="#events" class="nav-link text-sm font-medium text-zinc-300 hover:text-white transition-colors relative py-1">Events</a>
+          <a href="#garden" class="nav-link text-sm font-medium text-zinc-300 hover:text-white transition-colors relative py-1">Garden</a>
+          <a href="#gallery" class="nav-link text-sm font-medium text-zinc-300 hover:text-white transition-colors relative py-1">Gallery</a>
+          <a href="#contact" class="nav-link text-sm font-medium text-zinc-300 hover:text-white transition-colors relative py-1">Contact</a>
+        </div>
+
+        <!-- Desktop CTA -->
+        <div class="hidden lg:flex items-center gap-4">
+          <a href="tel:+919422775522" class="text-zinc-300 hover:text-amber-400 transition-colors flex items-center gap-1.5 text-xs font-mono">
+            <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+            <span>+91 94227 75522</span>
+          </a>
+          <button onclick="openBookingModal()" class="px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-emerald-950 transition-all duration-300 shadow-md flex items-center gap-1.5 transform hover:scale-105 active:scale-95 cursor-pointer">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+            <span>Book Now</span>
+          </button>
+        </div>
+
+        <!-- Mobile Toggles -->
+        <div class="lg:hidden flex items-center gap-3">
+          <a href="tel:+919422775522" class="p-2 rounded-full bg-zinc-900/60 border border-zinc-800 text-amber-400">
+            <i data-lucide="phone" class="w-4 h-4"></i>
+          </a>
+          <button onclick="toggleMobileMenu()" class="p-2 rounded-md text-zinc-300 hover:text-white focus:outline-none cursor-pointer">
+            <i data-lucide="menu" id="menu-icon-burger" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="hidden fixed inset-0 top-[64px] z-30 lg:hidden">
+      <div class="absolute inset-0 bg-black/60 backdrop-blur-md" onclick="toggleMobileMenu()"></div>
+      <div class="absolute top-0 left-0 right-0 bg-[#064e3b]/95 border-b border-amber-500/20 py-6 px-4 space-y-4 shadow-2xl flex flex-col items-center">
+        <a href="#home" onclick="toggleMobileMenu()" class="block text-lg font-medium py-2 w-full text-center text-amber-400 font-bold border-b border-white/5">Home</a>
+        <a href="#about" onclick="toggleMobileMenu()" class="block text-lg font-medium py-2 w-full text-center text-zinc-300 border-b border-white/5">About</a>
+        <a href="#rooms" onclick="toggleMobileMenu()" class="block text-lg font-medium py-2 w-full text-center text-zinc-300 border-b border-white/5">Rooms</a>
+        <a href="#restaurant" onclick="toggleMobileMenu()" class="block text-lg font-medium py-2 w-full text-center text-zinc-300 border-b border-white/5">Restaurant</a>
+        <a href="#events" onclick="toggleMobileMenu()" class="block text-lg font-medium py-2 w-full text-center text-zinc-300 border-b border-white/5">Events</a>
+        <a href="#garden" onclick="toggleMobileMenu()" class="block text-lg font-medium py-2 w-full text-center text-zinc-300 border-b border-white/5">Garden</a>
+        <a href="#gallery" onclick="toggleMobileMenu()" class="block text-lg font-medium py-2 w-full text-center text-zinc-300 border-b border-white/5">Gallery</a>
+        <a href="#contact" onclick="toggleMobileMenu()" class="block text-lg font-medium py-2 w-full text-center text-zinc-300 border-b border-white/5">Contact</a>
+        <button onclick="toggleMobileMenu(); openBookingModal();" class="w-full max-w-sm mt-4 py-3 bg-gradient-to-r from-amber-500 to-amber-600 text-emerald-950 font-bold uppercase tracking-wider text-xs rounded-xl flex items-center justify-center gap-2 cursor-pointer shadow-lg">
+          <i data-lucide="sparkles" class="w-4 h-4"></i>
+          <span>Book Stay Now</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO SLIDER ==================== -->
+  <header id="home" class="relative h-screen min-h-[600px] overflow-hidden bg-emerald-950">
+    <!-- Slide 1 -->
+    <div class="hero-slide absolute inset-0 opacity-100 transition-all duration-1000 scale-100">
+      <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1920&q=80" alt="Manas Garden Resort Entrance" class="w-full h-full object-cover">
+      <div class="absolute inset-0 bg-gradient-to-t from-emerald-950 via-emerald-950/40 to-black/70"></div>
+      <div class="absolute inset-0 flex items-center justify-center">
+        <div class="max-w-5xl mx-auto px-4 text-center space-y-6 z-10 pb-20">
+          <span class="inline-flex items-center gap-1 px-4 py-1 text-xs md:text-sm font-mono uppercase tracking-widest bg-amber-500/10 border border-amber-500/30 text-amber-300 rounded-full backdrop-blur-sm">
+            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-amber-500"></i> Raver, Maharashtra
+          </span>
+          <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-tight">Manas Garden Hotel</h1>
+          <p class="font-serif italic text-lg sm:text-2xl text-amber-200">Raver's Premier Luxury Resort</p>
+          <p class="max-w-2xl mx-auto text-sm sm:text-base text-zinc-300/90 leading-relaxed">A sanctuary of tranquility, where majestic green landscapes meet gold-standard hospitality. Experience bespoke living, exquisite dining, and unforgettable wedding celebrations.</p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+            <button onclick="openBookingModal()" class="px-8 py-3 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-emerald-950 font-bold uppercase tracking-wider text-xs rounded-full transform hover:scale-105 active:scale-95 transition-all shadow-lg cursor-pointer">Reserve a Suite</button>
+            <a href="#about" class="px-8 py-3 bg-white/10 hover:bg-white/20 border border-white/25 rounded-full font-bold uppercase tracking-wider text-xs transition-colors backdrop-blur-sm">Explore Resort</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="hero-slide absolute inset-0 opacity-0 transition-all duration-1000 scale-95 pointer-events-none">
+      <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1920&q=80" alt="Grand Wedding lawn" class="w-full h-full object-cover">
+      <div class="absolute inset-0 bg-gradient-to-t from-emerald-950 via-emerald-950/40 to-black/70"></div>
+      <div class="absolute inset-0 flex items-center justify-center">
+        <div class="max-w-5xl mx-auto px-4 text-center space-y-6 z-10 pb-20">
+          <span class="inline-flex items-center gap-1 px-4 py-1 text-xs md:text-sm font-mono uppercase tracking-widest bg-amber-500/10 border border-amber-500/30 text-amber-300 rounded-full backdrop-blur-sm">
+            <i data-lucide="heart" class="w-3.5 h-3.5 text-amber-500"></i> Magnificent Weddings
+          </span>
+          <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-tight">Your Dream Event, Magnified</h1>
+          <p class="font-serif italic text-lg sm:text-2xl text-amber-200">The Majestic Wedding Lawn</p>
+          <p class="max-w-2xl mx-auto text-sm sm:text-base text-zinc-300/90 leading-relaxed">Bask in the glory of our expansive, meticulously designed grand lawns. Tailored for beautiful weddings, receptions, and premium corporate gatherings.</p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+            <button onclick="openBookingModal()" class="px-8 py-3 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-emerald-950 font-bold uppercase tracking-wider text-xs rounded-full transform hover:scale-105 active:scale-95 transition-all shadow-lg cursor-pointer">Enquire Date</button>
+            <a href="#events" class="px-8 py-3 bg-white/10 hover:bg-white/20 border border-white/25 rounded-full font-bold uppercase tracking-wider text-xs transition-colors backdrop-blur-sm">View Packages</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slider Arrows -->
+    <button onclick="prevSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-black/30 hover:bg-amber-500/80 hover:text-emerald-950 text-white transition-all cursor-pointer hidden md:block">
+      <i data-lucide="chevron-left" class="w-6 h-6"></i>
+    </button>
+    <button onclick="nextSlide()" class="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-black/30 hover:bg-amber-500/80 hover:text-emerald-950 text-white transition-all cursor-pointer hidden md:block">
+      <i data-lucide="chevron-right" class="w-6 h-6"></i>
+    </button>
+
+    <!-- Indicators -->
+    <div class="absolute bottom-32 left-0 right-0 flex justify-center gap-2.5 z-20">
+      <button onclick="setSlide(0)" class="hero-dot w-8 h-3 rounded-full bg-amber-400 transition-all cursor-pointer"></button>
+      <button onclick="setSlide(1)" class="hero-dot w-3 h-3 rounded-full bg-white/30 transition-all cursor-pointer"></button>
+    </div>
+
+    <!-- Quick Form -->
+    <div class="absolute bottom-0 left-0 right-0 z-20 transform translate-y-1/3 px-4 max-w-6xl mx-auto hidden md:block">
+      <div class="glass-panel p-5 rounded-2xl border border-amber-500/20 shadow-2xl flex flex-row items-end gap-4">
+        <div class="flex-1 space-y-1.5">
+          <span class="text-[10px] font-mono uppercase tracking-wider text-amber-400 flex items-center gap-1">
+            <i data-lucide="calendar" class="w-3 h-3"></i> Check In
+          </span>
+          <input type="date" id="quick-in" class="w-full bg-emerald-950/80 border border-emerald-800 rounded-lg py-2 px-3 text-xs focus:outline-none focus:border-amber-400 text-zinc-100">
+        </div>
+        <div class="flex-1 space-y-1.5">
+          <span class="text-[10px] font-mono uppercase tracking-wider text-amber-400 flex items-center gap-1">
+            <i data-lucide="calendar" class="w-3 h-3"></i> Check Out
+          </span>
+          <input type="date" id="quick-out" class="w-full bg-emerald-950/80 border border-emerald-800 rounded-lg py-2 px-3 text-xs focus:outline-none focus:border-amber-400 text-zinc-100">
+        </div>
+        <div class="flex-grow space-y-1.5 max-w-xs">
+          <span class="text-[10px] font-mono uppercase tracking-wider text-amber-400 flex items-center gap-1">Accommodation Style</span>
+          <select id="quick-room" class="w-full bg-emerald-950/80 border border-emerald-800 rounded-lg py-2 px-3 text-xs focus:outline-none focus:border-amber-400 text-zinc-100">
+            <option value="deluxe-green">Deluxe Green-View Room (₹3,200/N)</option>
+            <option value="luxury-garden" selected>Luxury Garden Suite (₹4,800/N)</option>
+            <option value="emperor-presidential">Emperor Royal Suite (₹7,500/N)</option>
+          </select>
+        </div>
+        <button onclick="triggerQuickBook()" class="py-2.5 px-6 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-emerald-950 font-bold uppercase tracking-wider text-xs rounded-lg flex items-center gap-2 shadow-lg cursor-pointer">
+          <i data-lucide="search" class="w-4 h-4"></i>
+          <span>Check Rates</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== WELCOME & HIGHLIGHTS ==================== -->
+  <section id="about" class="relative py-24 bg-white text-zinc-950 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7 space-y-6">
+          <div class="space-y-2">
+            <span class="text-xs font-mono uppercase tracking-widest text-amber-600 font-semibold block">Welcome to Sublime Retreat</span>
+            <h2 class="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-emerald-950">Manas Garden Hotel</h2>
+            <div class="h-1 w-20 bg-amber-500 rounded-full"></div>
+          </div>
+          <p class="text-zinc-600 leading-relaxed text-sm sm:text-base">Nestled along the scenic <strong>Burhanpur Road in Raver, Maharashtra</strong>, Manas Garden Hotel is a premium nature-focused resort designed for travelers seeking refined elegance and serene quietude. Surrounded by sprawling manicured botanical groves, our hotel seamlessly fuses luxury modern glass architectures with beautiful regional culture.</p>
+          <p class="text-zinc-600 leading-relaxed text-sm sm:text-base">Whether you are here to relax in our state-of-the-art garden suites, relish authentic regional delicacies (including our famous local <span class="italic text-amber-700 font-semibold">Mawa Jalebi</span>) at our open-air restaurant, or celebrate once-in-a-lifetime marital milestones on our vast green lawns, we promise an impeccable experience gilded with warm, gold-standard Indian hospitality.</p>
+          <div class="grid grid-cols-3 gap-4 pt-4 text-center border-t border-zinc-100">
+            <div class="p-3 bg-zinc-50 rounded-xl border border-zinc-100">
+              <p class="font-serif text-2xl sm:text-3xl font-extrabold text-emerald-900">2.5k+</p>
+              <p class="text-[10px] text-zinc-500 uppercase tracking-wider font-semibold mt-1">Happy Guests</p>
+            </div>
+            <div class="p-3 bg-zinc-50 rounded-xl border border-zinc-100">
+              <p class="font-serif text-2xl sm:text-3xl font-extrabold text-emerald-900">1.5 Acre</p>
+              <p class="text-[10px] text-zinc-500 uppercase tracking-wider font-semibold mt-1">Lush Lawns</p>
+            </div>
+            <div class="p-3 bg-zinc-50 rounded-xl border border-zinc-100">
+              <p class="font-serif text-2xl sm:text-3xl font-extrabold text-emerald-900">24/7</p>
+              <p class="text-[10px] text-zinc-500 uppercase tracking-wider font-semibold mt-1">Full Service</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5">
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white/50 aspect-[4/5] bg-zinc-100">
+            <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=800&q=80" alt="Manas Garden Groves" class="w-full h-full object-cover">
+            <div class="absolute bottom-4 left-4 right-4 bg-white/75 backdrop-blur-md p-4 rounded-xl border border-white/40 text-zinc-950">
+              <p class="text-[10px] font-mono uppercase tracking-wider text-amber-700 font-bold">Resort Location</p>
+              <p class="text-xs mt-0.5 font-medium">Burhanpur Road, Raver, Maharashtra 425508, India</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Highlights Grid -->
+      <div class="mt-28 space-y-12">
+        <div class="text-center max-w-2xl mx-auto space-y-3">
+          <span class="text-xs font-mono uppercase tracking-widest text-amber-600 font-bold">Unrivaled Indulgences</span>
+          <h3 class="font-serif text-3xl sm:text-4xl font-bold text-emerald-950">The Gold Standard of Hospitality</h3>
+          <p class="text-zinc-500 text-sm">We focus on the minute details to craft a completely stress-free and luxurious environment for our esteemed guests.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="group bg-zinc-50 hover:bg-[#022c22] p-6 rounded-2xl border border-zinc-100 hover:border-amber-500/30 shadow-sm transition-all duration-300">
+            <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-700 group-hover:bg-amber-500/10 group-hover:text-amber-400 flex items-center justify-center border border-emerald-100 mb-5">
+              <i data-lucide="tree-pine" class="w-6 h-6"></i>
+            </div>
+            <h4 class="font-serif text-lg font-bold text-emerald-950 group-hover:text-amber-200 transition-colors mb-2">Lush Botanical Gardens</h4>
+            <p class="text-zinc-500 group-hover:text-zinc-300 text-xs sm:text-sm leading-relaxed">Sprawling, professionally landscaped gardens displaying beautiful flora, peaceful fountains, and winding walking paths.</p>
+          </div>
+          <div class="group bg-zinc-50 hover:bg-[#022c22] p-6 rounded-2xl border border-zinc-100 hover:border-amber-500/30 shadow-sm transition-all duration-300">
+            <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-700 group-hover:bg-amber-500/10 group-hover:text-amber-400 flex items-center justify-center border border-emerald-100 mb-5">
+              <i data-lucide="utensils" class="w-6 h-6"></i>
+            </div>
+            <h4 class="font-serif text-lg font-bold text-emerald-950 group-hover:text-amber-200 transition-colors mb-2">Multi-Cuisine Restaurant</h4>
+            <p class="text-zinc-500 group-hover:text-zinc-300 text-xs sm:text-sm leading-relaxed">A gourmet dining experience in an open-air glass pavilion serving authentic regional and global masterworks.</p>
+          </div>
+          <div class="group bg-zinc-50 hover:bg-[#022c22] p-6 rounded-2xl border border-zinc-100 hover:border-amber-500/30 shadow-sm transition-all duration-300">
+            <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-700 group-hover:bg-amber-500/10 group-hover:text-amber-400 flex items-center justify-center border border-emerald-100 mb-5">
+              <i data-lucide="sparkles" class="w-6 h-6"></i>
+            </div>
+            <h4 class="font-serif text-lg font-bold text-emerald-950 group-hover:text-amber-200 transition-colors mb-2">Grand Wedding Lawns</h4>
+            <p class="text-zinc-500 group-hover:text-zinc-300 text-xs sm:text-sm leading-relaxed">Accommodating up to 2,000 guests with elegant lighting, majestic stage frameworks, and bespoke event catering.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ROOMS SECTION ==================== -->
+  <section id="rooms" class="relative py-24 bg-[#022c22] text-white overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center max-w-3xl mx-auto space-y-4">
+        <span class="inline-flex items-center gap-1.5 px-3.5 py-1 text-xs font-mono uppercase tracking-widest bg-amber-500/15 border border-amber-500/30 text-amber-300 rounded-full">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Luxury Sanctuaries
+        </span>
+        <h2 class="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-white">Suites & Private Cottages</h2>
+        <div class="h-1 w-20 bg-amber-500 mx-auto rounded-full"></div>
+        <p class="text-zinc-300 text-sm">Crafted for ultimate recovery, our guest rooms pair nature-inspired organic materials with state-of-the-art climate control, glass facades, and sweeping views of Raver's majestic landscape.</p>
+      </div>
+
+      <!-- Grid Row Deluxe -->
+      <div class="mt-20 space-y-16">
+        <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+          <div class="w-full lg:w-1/2 relative">
+            <div class="rounded-2xl overflow-hidden aspect-[16/10] bg-zinc-900 border border-white/10 shadow-2xl">
+              <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=80" alt="Deluxe Room" class="w-full h-full object-cover">
+              <div class="absolute bottom-5 left-5 glass-panel py-2 px-4 rounded-xl">
+                <span class="block text-[10px] text-amber-300 uppercase font-mono">Prices from</span>
+                <p class="font-mono text-xl font-bold">₹3,200<span class="text-xs text-zinc-300 font-sans"> / Night</span></p>
+              </div>
+            </div>
+          </div>
+          <div class="w-full lg:w-1/2 space-y-6">
+            <span class="text-xs font-mono uppercase tracking-widest text-amber-400 font-bold">Deluxe Leisure</span>
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white">Deluxe Green-View Room</h3>
+            <p class="text-zinc-300 text-sm">A beautifully balanced sanctuary featuring elegant glass architectural elements, premium mahogany details, and sweeping views of our signature central flower beds.</p>
+            
+            <div class="grid grid-cols-2 gap-4 py-4 border-y border-white/10 text-xs text-zinc-300">
+              <div class="flex items-center gap-2.5"><i data-lucide="expand" class="w-4.5 h-4.5 text-amber-400"></i><span>320 sq ft Space</span></div>
+              <div class="flex items-center gap-2.5"><i data-lucide="users" class="w-4.5 h-4.5 text-amber-400"></i><span>Accommodates 2 Adults, 1 Child</span></div>
+              <div class="flex items-center gap-2.5"><i data-lucide="bed" class="w-4.5 h-4.5 text-amber-400"></i><span>King Size bed</span></div>
+              <div class="flex items-center gap-2.5"><i data-lucide="trees" class="w-4.5 h-4.5 text-amber-400"></i><span>Scenic Flower Gardens</span></div>
+            </div>
+
+            <div class="pt-4 flex flex-col sm:flex-row gap-3">
+              <button onclick="openBookingModal('deluxe-green')" class="px-8 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider bg-gradient-to-r from-amber-500 to-amber-600 text-emerald-950 hover:from-amber-400 font-bold transition-all shadow-md cursor-pointer">Instant Booking</button>
+              <a href="#contact" class="px-8 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider bg-white/5 border border-white/10 text-zinc-300 text-center">Enquire Details</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Suite Row -->
+        <div class="flex flex-col lg:flex-row-reverse items-center gap-10 lg:gap-16">
+          <div class="w-full lg:w-1/2 relative">
+            <div class="rounded-2xl overflow-hidden aspect-[16/10] bg-zinc-900 border border-white/10 shadow-2xl">
+              <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1200&q=80" alt="Luxury Suite" class="w-full h-full object-cover">
+              <div class="absolute bottom-5 left-5 glass-panel py-2 px-4 rounded-xl">
+                <span class="block text-[10px] text-amber-300 uppercase font-mono">Prices from</span>
+                <p class="font-mono text-xl font-bold">₹4,800<span class="text-xs text-zinc-300 font-sans"> / Night</span></p>
+              </div>
+            </div>
+          </div>
+          <div class="w-full lg:w-1/2 space-y-6">
+            <span class="text-xs font-mono uppercase tracking-widest text-amber-400 font-bold">Premium Suite</span>
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white">Luxury Garden Suite</h3>
+            <p class="text-zinc-300 text-sm">Our signature room with floor-to-ceiling glass paneling, a private veranda looking into the botanical palm garden, and premium brass-trimmed fixtures.</p>
+            
+            <div class="grid grid-cols-2 gap-4 py-4 border-y border-white/10 text-xs text-zinc-300">
+              <div class="flex items-center gap-2.5"><i data-lucide="expand" class="w-4.5 h-4.5 text-amber-400"></i><span>480 sq ft Space</span></div>
+              <div class="flex items-center gap-2.5"><i data-lucide="users" class="w-4.5 h-4.5 text-amber-400"></i><span>Accommodates 3 Adults</span></div>
+              <div class="flex items-center gap-2.5"><i data-lucide="bed" class="w-4.5 h-4.5 text-amber-400"></i><span>California King Bed</span></div>
+              <div class="flex items-center gap-2.5"><i data-lucide="trees" class="w-4.5 h-4.5 text-amber-400"></i><span>Scenic Palm Garden</span></div>
+            </div>
+
+            <div class="pt-4 flex flex-col sm:flex-row gap-3">
+              <button onclick="openBookingModal('luxury-garden')" class="px-8 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider bg-gradient-to-r from-amber-500 to-amber-600 text-emerald-950 hover:from-amber-400 font-bold transition-all shadow-md cursor-pointer">Instant Booking</button>
+              <a href="#contact" class="px-8 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider bg-white/5 border border-white/10 text-zinc-300 text-center">Enquire Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== RESTAURANT ==================== -->
+  <section id="restaurant" class="relative py-24 bg-white text-zinc-950 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20">
+        <div class="lg:col-span-5 space-y-6">
+          <div class="space-y-2">
+            <span class="text-xs font-mono uppercase tracking-widest text-amber-600 font-bold block">Epicurean Oasis</span>
+            <h2 class="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-emerald-950">Al Fresco Garden Dining</h2>
+            <div class="h-1 w-20 bg-amber-500 rounded-full"></div>
+          </div>
+          <p class="text-zinc-600 leading-relaxed text-sm">Immerse yourself in a sublime culinary voyage at our signature open-air pavilion. Surrounded by towering tropical palm trees and soft golden string lights, our culinary masters prepare traditional dishes infused with local flair.</p>
+          <div class="space-y-3 font-sans text-sm">
+            <div class="flex gap-2"><i data-lucide="leaf" class="text-emerald-700 w-5 h-5 flex-shrink-0"></i><div><strong>Garden-to-Table:</strong> Fresh organically harvested culinary herbs.</div></div>
+            <div class="flex gap-2"><i data-lucide="flame" class="text-emerald-700 w-5 h-5 flex-shrink-0"></i><div><strong>Clay Tandoor:</strong> Exquisite grilled paneer tikkas and flatbreads.</div></div>
+          </div>
+        </div>
+        <div class="lg:col-span-7">
+          <div class="relative rounded-2xl overflow-hidden aspect-[16/10] shadow-2xl bg-zinc-900">
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80" alt="Restaurant Garden Dining" class="w-full h-full object-cover">
+          </div>
+        </div>
+      </div>
+
+      <!-- Dishes -->
+      <div class="space-y-12 pt-16 border-t border-zinc-100">
+        <div class="text-center max-w-2xl mx-auto space-y-2">
+          <h3 class="font-serif text-2xl sm:text-3xl font-bold text-emerald-950">Signature Epicurean Highlights</h3>
+          <p class="text-zinc-500 text-xs">Savor a curated selection of our finest signature dishes, prepared daily.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Dish Item 1 -->
+          <div class="bg-zinc-50 rounded-2xl overflow-hidden border border-zinc-100 flex flex-col justify-between shadow-sm">
+            <div class="aspect-[4/3] bg-zinc-200">
+              <img src="https://images.unsplash.com/photo-1601050690597-df056fb4ce78?auto=format&fit=crop&w=600&q=80" alt="Paneer Makhanwala" class="w-full h-full object-cover">
+            </div>
+            <div class="p-5 space-y-4">
+              <div class="flex justify-between font-serif font-bold text-emerald-950">
+                <h4>Paneer Makhanwala Gold</h4>
+                <span class="font-mono text-emerald-900">₹340</span>
+              </div>
+              <p class="text-zinc-500 text-xs">Fresh cottage cheese cubes simmered in a velvety, rich tomato-butter gravy garnished with cream.</p>
+            </div>
+          </div>
+          <!-- Dish Item 2 -->
+          <div class="bg-zinc-50 rounded-2xl overflow-hidden border border-zinc-100 flex flex-col justify-between shadow-sm">
+            <div class="aspect-[4/3] bg-zinc-200">
+              <img src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80" alt="Burhanpur Mawa Jalebi" class="w-full h-full object-cover">
+            </div>
+            <div class="p-5 space-y-4">
+              <div class="flex justify-between font-serif font-bold text-emerald-950">
+                <h4>Burhanpur Mawa Jalebi</h4>
+                <span class="font-mono text-emerald-900">₹180</span>
+              </div>
+              <p class="text-zinc-500 text-xs">A dark rich regional delicacy made with fresh reduced mawa, fried to perfection, and soaked in sugar syrup.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== WEDDING & EVENTS ==================== -->
+  <section id="events" class="relative py-24 bg-[#022c22] text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-16">
+        <div class="lg:col-span-6 space-y-5">
+          <span class="inline-flex items-center gap-1.5 px-3.5 py-1 text-xs font-mono uppercase tracking-widest bg-amber-500/15 text-amber-300 rounded-full">
+            <i data-lucide="heart" class="w-3.5 h-3.5 text-amber-400"></i> Once In A Lifetime
+          </span>
+          <h2 class="font-serif text-3xl sm:text-5xl font-bold tracking-tight">A Majestic Stage for Majestic Vows</h2>
+          <div class="h-1 w-20 bg-amber-500 rounded-full"></div>
+          <p class="text-zinc-300 text-sm">Host your dream celebrations at the most prestigious wedding destination along Burhanpur Road. Spanning over 1.5 acres of perfectly manicured lawns, Manas Garden provides an elegant blend of natural beauty and customized event structures.</p>
+        </div>
+        <div class="lg:col-span-6">
+          <div class="rounded-2xl overflow-hidden aspect-[16/9] border border-white/10 shadow-2xl">
+            <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1200&q=80" alt="Wedding lawn decorations" class="w-full h-full object-cover">
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="glass-panel p-6 rounded-2xl border border-white/10">
+          <h3 class="font-serif text-xl font-bold text-amber-200">Royal Wedding Celebration</h3>
+          <p class="text-zinc-300 text-xs mt-2">Staging, floral altar decorations, catering options, and luxury suite allotments for up to 2,000 guests.</p>
+          <button onclick="triggerEnquiry('Royal Wedding Celebration')" class="w-full mt-8 py-2 bg-white/5 hover:bg-amber-500 hover:text-emerald-950 text-xs font-bold uppercase rounded-xl transition-all border border-white/10">Inquire Details</button>
+        </div>
+        <div class="glass-panel p-6 rounded-2xl border border-white/10">
+          <h3 class="font-serif text-xl font-bold text-amber-200">Grand Evening Reception</h3>
+          <p class="text-zinc-300 text-xs mt-2">Elegant night receptions with ambient fairy lighting, dynamic sound setups, and grand culinary tables.</p>
+          <button onclick="triggerEnquiry('Grand Evening Reception')" class="w-full mt-8 py-2 bg-white/5 hover:bg-amber-500 hover:text-emerald-950 text-xs font-bold uppercase rounded-xl transition-all border border-white/10">Inquire Details</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== GARDEN SECTION ==================== -->
+  <section id="garden" class="relative py-24 bg-white text-zinc-950 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-6 grid grid-cols-2 gap-4">
+          <div class="space-y-4">
+            <div class="rounded-2xl overflow-hidden aspect-square border"><img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover"></div>
+            <div class="rounded-2xl overflow-hidden aspect-[4/5] border"><img src="https://images.unsplash.com/photo-1546412414-e1885261b951?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover"></div>
+          </div>
+          <div class="space-y-4 pt-8">
+            <div class="rounded-2xl overflow-hidden aspect-[4/5] border"><img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover"></div>
+            <div class="rounded-2xl overflow-hidden aspect-square border"><img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover"></div>
+          </div>
+        </div>
+        <div class="lg:col-span-6 space-y-6">
+          <div class="space-y-2">
+            <span class="text-xs font-mono uppercase tracking-widest text-amber-600 font-bold block">The Sanctuary of Greenery</span>
+            <h2 class="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-emerald-950">An Oasis of Calm and Fresh Air</h2>
+            <div class="h-1 w-20 bg-amber-500 rounded-full"></div>
+          </div>
+          <p class="text-zinc-600 text-sm">The core of the Manas Garden experience lies in our deep respect for nature. Carefully planted with royal palm trees, botanical hedges, and flowering paths, we offer an air-purified microclimate for weekend escapes.</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 text-xs text-zinc-700">
+            <div><strong>• Botanical Groves:</strong> Royal palms and tropical ferns.</div>
+            <div><strong>• Flower Paths:</strong> Beautiful multi-colored blooms.</div>
+            <div><strong>• Leisure Gazebos:</strong> Reading zones inside the garden.</div>
+            <div><strong>• Satpura Valley backdrop:</strong> Views of distant mountain ridges.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== GALLERY SECTION ==================== -->
+  <section id="gallery" class="relative py-24 bg-[#022c22] text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto space-y-3 mb-16">
+        <h2 class="font-serif text-3xl sm:text-5xl font-bold">Photo Gallery</h2>
+        <div class="h-1 w-20 bg-amber-500 mx-auto rounded-full"></div>
+        <p class="text-zinc-300 text-sm">Walk virtually through our emerald gardens, fine dining pavilions, romantic wedding alters, and high-end suites.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="relative aspect-square rounded-xl overflow-hidden border border-white/5"><img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover"></div>
+        <div class="relative aspect-square rounded-xl overflow-hidden border border-white/5"><img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover"></div>
+        <div class="relative aspect-square rounded-xl overflow-hidden border border-white/5"><img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover"></div>
+        <div class="relative aspect-square rounded-xl overflow-hidden border border-white/5"><img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FAQ SECTION ==================== -->
+  <section class="py-24 bg-[#022c22] text-white">
+    <div class="max-w-3xl mx-auto px-4">
+      <div class="text-center space-y-3 mb-12">
+        <h2 class="font-serif text-3xl font-bold">Frequently Asked Questions</h2>
+        <div class="h-1 w-16 bg-amber-500 mx-auto rounded-full"></div>
+      </div>
+      <div class="space-y-4">
+        <div class="border border-white/10 rounded-xl bg-white/5 p-5">
+          <h4 class="font-bold text-sm sm:text-base">How do I reach Manas Garden Hotel?</h4>
+          <p class="text-xs text-zinc-300 mt-2">We are situated on the Burhanpur Road in Raver, Maharashtra. Raver Railway Station is just 10 minutes away, and Bhusaval is approx. 45 minutes by car.</p>
+        </div>
+        <div class="border border-white/10 rounded-xl bg-white/5 p-5">
+          <h4 class="font-bold text-sm sm:text-base">What is the capacity of the Wedding Lawn?</h4>
+          <p class="text-xs text-zinc-300 mt-2">Our main grand wedding lawn can comfortably host up to 2,000 guests, making it the largest premium banquet lawn in Raver.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT SECTION ==================== -->
+  <section id="contact" class="py-24 bg-white text-zinc-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto space-y-4 mb-16">
+        <h2 class="font-serif text-3xl sm:text-5xl font-bold text-emerald-950">Contact & Location Details</h2>
+        <div class="h-1 w-20 bg-amber-500 mx-auto rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <div class="lg:col-span-5 space-y-6">
+          <h3 class="font-serif text-2xl font-bold text-emerald-950 font-semibold">Get In Touch</h3>
+          <div class="space-y-4 text-zinc-600 text-sm">
+            <div class="flex gap-3"><i data-lucide="map-pin" class="text-emerald-700 w-5 h-5 flex-shrink-0"></i><div><strong>Hotel Address:</strong> Burhanpur Road, Raver, Maharashtra 425508, India</div></div>
+            <div class="flex gap-3"><i data-lucide="phone" class="text-emerald-700 w-5 h-5 flex-shrink-0"></i><div><strong>Phone Helpline:</strong> +91 94227 75522</div></div>
+            <div class="flex gap-3"><i data-lucide="mail" class="text-emerald-700 w-5 h-5 flex-shrink-0"></i><div><strong>Email Inbox:</strong> info@manasgardenhotel.com</div></div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 space-y-6">
+          <!-- Form -->
+          <form onsubmit="submitContactForm(event)" class="p-6 bg-zinc-50 rounded-2xl border space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <input type="text" id="contact-name" placeholder="Your Name" required class="bg-white border rounded-lg py-2 px-3 text-xs w-full focus:outline-none focus:border-emerald-800 text-zinc-800">
+              <input type="email" id="contact-email" placeholder="Email Address" required class="bg-white border rounded-lg py-2 px-3 text-xs w-full focus:outline-none focus:border-emerald-800 text-zinc-800">
+            </div>
+            <textarea id="contact-message" placeholder="Your Message..." required rows="4" class="bg-white border rounded-lg py-2 px-3 text-xs w-full focus:outline-none focus:border-emerald-800 text-zinc-800 resize-none"></textarea>
+            <button type="submit" class="w-full py-2.5 bg-emerald-900 text-white font-bold uppercase text-xs rounded-xl flex items-center justify-center gap-2 hover:bg-emerald-950">Send Message</button>
+          </form>
+
+          <!-- Map -->
+          <div class="rounded-2xl overflow-hidden h-60 border relative bg-zinc-100">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3715.422616238382!2d76.03668357597148!3d21.363383380371404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd8f1618a8047bf%3A0xc6cf6d427d141e6e!2sManas%20Garden%20Hotel!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" class="w-full h-full border-0" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-zinc-950 text-zinc-400 py-16 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-10">
+      <div class="space-y-4">
+        <span class="block font-serif text-lg font-bold text-white uppercase tracking-wider">Manas Garden</span>
+        <p class="text-xs leading-relaxed">Nestled along Burhanpur Road in Raver, Maharashtra, offering premium suites, restaurant dishes, and majestic event lawns.</p>
+      </div>
+      <div>
+        <h4 class="font-serif text-sm font-bold text-amber-300 uppercase mb-4">Quick Links</h4>
+        <ul class="space-y-2 text-xs">
+          <li><a href="#about" class="hover:text-amber-400">About Us</a></li>
+          <li><a href="#rooms" class="hover:text-amber-400">Our Suites</a></li>
+          <li><a href="#restaurant" class="hover:text-amber-400">Dining</a></li>
+          <li><a href="#events" class="hover:text-amber-400">Wedding Lawn</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-serif text-sm font-bold text-amber-300 uppercase mb-4">Contact Details</h4>
+        <p class="text-xs leading-relaxed">Burhanpur Road, Raver, MH<br>Phone: +91 94227 75522<br>Email: info@manasgardenhotel.com</p>
+      </div>
+      <div>
+        <h4 class="font-serif text-sm font-bold text-amber-300 uppercase mb-4">Operating Hours</h4>
+        <ul class="space-y-1.5 text-xs">
+          <li>Lodging: <span class="text-white">24/7 Service</span></li>
+          <li>Dining: <span class="text-white">11 AM - 11 PM</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 border-t border-white/5 mt-12 text-center text-xs text-zinc-600 font-mono">
+      © <script>document.write(new Date().getFullYear())</script> Manas Garden Hotel. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- ==================== BOOKING MODAL ==================== -->
+  <div id="booking-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div class="absolute inset-0 bg-black/80 backdrop-blur-md" onclick="closeBookingModal()"></div>
+    <div class="relative w-full max-w-lg bg-zinc-900 border border-amber-500/30 text-white rounded-2xl p-6 shadow-2xl overflow-y-auto max-h-[90vh] z-10">
+      <button onclick="closeBookingModal()" class="absolute top-4 right-4 p-2 rounded-full bg-black/40 text-white hover:bg-amber-500 hover:text-emerald-950 transition-colors"><i data-lucide="x" class="w-5 h-5"></i></button>
+      <h3 class="font-serif text-2xl font-bold text-amber-400 mb-2">Bespoke Reservation</h3>
+      <p class="text-xs text-zinc-400 mb-6">Book directly for premium benefits and regional delights.</p>
+      
+      <form onsubmit="submitBookingForm(event)" class="space-y-4 text-xs sm:text-sm">
+        <div class="space-y-1">
+          <label class="font-semibold text-zinc-300">Select Suite / Cottage</label>
+          <select id="modal-room-select" class="w-full bg-zinc-800 border border-zinc-700 rounded-lg py-2 px-3 text-zinc-200">
+            <option value="deluxe-green">Deluxe Green-View Room (₹3,200/N)</option>
+            <option value="luxury-garden" selected>Luxury Garden Suite (₹4,800/N)</option>
+            <option value="emperor-presidential">Emperor Royal Suite (₹7,500/N)</option>
+          </select>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="space-y-1">
+            <label class="font-semibold text-zinc-300">Check In Date</label>
+            <input type="date" id="modal-check-in" required class="w-full bg-zinc-800 border border-zinc-700 rounded-lg py-2 px-3 text-zinc-200">
+          </div>
+          <div class="space-y-1">
+            <label class="font-semibold text-zinc-300">Check Out Date</label>
+            <input type="date" id="modal-check-out" required class="w-full bg-zinc-800 border border-zinc-700 rounded-lg py-2 px-3 text-zinc-200">
+          </div>
+        </div>
+        <div class="space-y-1">
+          <label class="font-semibold text-zinc-300">Full Name *</label>
+          <input type="text" id="modal-fullname" required placeholder="John Doe" class="w-full bg-zinc-800 border border-zinc-700 rounded-lg py-2 px-3 text-zinc-200">
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="space-y-1">
+            <label class="font-semibold text-zinc-300">Phone Number *</label>
+            <input type="tel" id="modal-phone" required placeholder="+91 98765 43210" class="w-full bg-zinc-800 border border-zinc-700 rounded-lg py-2 px-3 text-zinc-200">
+          </div>
+          <div class="space-y-1">
+            <label class="font-semibold text-zinc-300">Email Address *</label>
+            <input type="email" id="modal-email" required placeholder="john@example.com" class="w-full bg-zinc-800 border border-zinc-700 rounded-lg py-2 px-3 text-zinc-200">
+          </div>
+        </div>
+        <button type="submit" class="w-full py-3 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-emerald-950 font-bold uppercase rounded-xl text-xs transition-all shadow-lg flex justify-center items-center gap-2">
+          <span>Complete Reservation Request</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==================== FLOATING SUPPORT BUTTONS ==================== -->
+  <div class="fixed bottom-6 right-6 z-30">
+    <button onclick="triggerWhatsApp()" class="w-12 h-12 rounded-full bg-emerald-500 text-white flex items-center justify-center shadow-2xl transition-all duration-300 transform hover:scale-110 active:scale-95 border-2 border-white animate-bounce cursor-pointer">
+      <i data-lucide="message-square" class="w-6 h-6"></i>
+    </button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
